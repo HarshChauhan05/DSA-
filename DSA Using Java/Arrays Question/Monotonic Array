@@ -1,3 +1,6 @@
+Monotonic Array Means that Array should be in completely increasing order like (1,2,2,3,4,4,5) or ompletely decreasing order like (4,4,3,2,1,1).
+it should not be in form of (1,2,1,4,3,4)
+
 Two solution for this Question --
 
                                                                 1st solution
