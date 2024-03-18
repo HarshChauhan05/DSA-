@@ -1,4 +1,4 @@
-Approach 1:-(brute force  time complexity: O(n))
+Approach 1:-(time complexity: O(n))
             1. store the first element in the temp variable;
             2. shift all the remaning elements to the left by one .
             3. add the temp variable value in the last of the array.
