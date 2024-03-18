@@ -22,3 +22,33 @@ int missingNumber(vector<int>&a, int N) {
     // It is just to avoid warnings.
     return -1;
 }
+
+
+Apporach 2:
+     1. find the sum of given array s1.
+     2. find the sum of given input size using n*n+!/2 in store s2.
+     3. calculate the differance s2-s1;
+     4. return the result.
+
+
+#include<iostream>
+using namespace std;
+int main(){
+    int m,n,arr[100];
+    cout<<"formate"<<endl;
+    cin>>m;
+    cout<<"Enter the Size of array:";
+    cin>>n;
+    cout<<"enter the element in the array:"<<endl;
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int sum = (m*(m+1))/2;
+    int sum1=0;
+    for(int i=0;i<n;i++){
+        sum1 += arr[i];
+    }
+
+    int res=sum-sum1;
+    cout<<res;
+}
