@@ -1,1 +1,24 @@
+Apporach 1: 
+     1. using hashing we can store the freqency of the element in the hashing array.
+     2.  after then we can search where is the frequency is 0 in the array 
+     3. return value.
 
+int missingNumber(vector<int>&a, int N) {
+
+    int hash[N + 1] = {0}; //hash array
+
+    // storing the frequencies:
+    for (int i = 0; i < N - 1; i++)
+        hash[a[i]]++;
+
+    //checking the freqencies for numbers 1 to N:
+    for (int i = 1; i <= N; i++) {
+        if (hash[i] == 0) {
+            return i;
+        }
+    }
+
+    // The following line will never execute.
+    // It is just to avoid warnings.
+    return -1;
+}
