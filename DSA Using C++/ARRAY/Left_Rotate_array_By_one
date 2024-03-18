@@ -1,1 +1,22 @@
+Approach 1:-(brute force  time complexity: O(n))
+            1. store the first element in the temp variable;
+            2. shift all the remaning elements to the left by one .
+            3. add the temp variable value in the last of the array.
 
+code:- 
+void sift_by_one(int arr[], int n){
+    if(n==1){
+        return;
+    }
+    else{
+        int temp=arr[0];
+        for(int i=1;i<n;i++){
+            arr[i-1]=arr[i];
+        }
+        arr[n-1]=temp;
+    }
+
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+}
