@@ -20,3 +20,7 @@ void sift_by_one(int arr[], int n){
         cout<<arr[i]<<" ";
     }
 }
+
+
+// Same algorithm use for Right Sift
+
