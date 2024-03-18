@@ -1,0 +1,51 @@
+Approach 1:
+      1. sort the given array in descending order if non-zero keys has no order restriction.
+      2. time complexity is O(nlogn).
+
+code
+
+void moveZeroes(vector<int>& nums) {
+        sort(nums.begin(), nums.end(), greater<int>());
+    }
+
+Approach 2:
+
+   1. Copy the all non-zero elements in the other array.
+   2. assign zero value to the remaning elements at the end.
+   3. return it.
+
+code: 
+
+vector<int> moveZeros(int n, vector<int> a) {
+    //temporary array:
+    vector<int> temp;
+    //copy non-zero elements
+    //from original -> temp array:
+    for (int i = 0; i < n; i++) {
+        if (a[i] != 0)
+            temp.push_back(a[i]);
+    }
+
+    // number of non-zero elements.
+    int nz = temp.size();
+
+    //copy elements from temp
+    //fill first nz fields of
+    //original array:
+    for (int i = 0; i < nz; i++) {
+        a[i] = temp[i];
+    }
+
+    //fill rest of the cells with 0:
+    for (int i = nz; i < n; i++) {
+        a[i] = 0;
+    }
+    return a;
+}
+
+
+Approoach 2:
+
+ 1. first find the zero .
+ 2. after then check the next npn-zero elements and swap with it.
+ 3. process repete untill all the zeros does not reach at the end .
