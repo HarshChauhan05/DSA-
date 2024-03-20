@@ -1,0 +1,31 @@
+class Solution {
+    public int sumOfEncryptedInt(int[] array) {
+         int tottal=0;
+        for (int y=0;y<array.length;y++) {
+            int num = array[y];
+            int count = 0;
+            while (num > 0) {
+                num = num / 10;
+                count++;
+            }
+            num = array[y];
+            int arr[] = new int[count];
+            int v = 0;
+            int f = 0;
+            while (num > 0) {
+                int c = num % 10;
+                num = num / 10;
+                arr[v] = c;
+                v++;
+                if (f < c) f = c;
+            }
+            int t = 0;
+            t = f;
+            for (int i = 1; i < count; i++) {
+                t = f + t * 10;
+            }
+           tottal=tottal+t;
+        }
+        return tottal;
+    }
+}
