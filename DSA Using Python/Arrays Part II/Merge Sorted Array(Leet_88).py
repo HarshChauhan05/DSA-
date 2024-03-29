@@ -3,9 +3,13 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
+        if m==0:
+            for i in range(n):
+                nums1[i]=nums2[i]
+            return
         for i in range(m-1,-1,-1):
             nums1[i],nums1[i+n]=nums1[i+n],nums1[i]
-        j=m
+        j=n
         k=0
         print(nums1)
         for i in range(n+m):
