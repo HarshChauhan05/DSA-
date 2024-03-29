@@ -1,0 +1,54 @@
+Apporach 1: 
+     1. using hashing we can store the freqency of the element in the hashing array.
+     2.  after then we can search where is the frequency is 0 in the array 
+     3. return value.
+
+int missingNumber(vector<int>&a, int N) {
+
+    int hash[N + 1] = {0}; //hash array
+
+    // storing the frequencies:
+    for (int i = 0; i < N - 1; i++)
+        hash[a[i]]++;
+
+    //checking the freqencies for numbers 1 to N:
+    for (int i = 1; i <= N; i++) {
+        if (hash[i] == 0) {
+            return i;
+        }
+    }
+
+    // The following line will never execute.
+    // It is just to avoid warnings.
+    return -1;
+}
+
+
+Apporach 2:
+     1. find the sum of given array s1.
+     2. find the sum of given input size using n*n+!/2 in store s2.
+     3. calculate the differance s2-s1;
+     4. return the result.
+
+
+#include<iostream>
+using namespace std;
+int main(){
+    int m,n,arr[100];
+    cout<<"formate"<<endl;
+    cin>>m;
+    cout<<"Enter the Size of array:";
+    cin>>n;
+    cout<<"enter the element in the array:"<<endl;
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int sum = (m*(m+1))/2;
+    int sum1=0;
+    for(int i=0;i<n;i++){
+        sum1 += arr[i];
+    }
+
+    int res=sum-sum1;
+    cout<<res;
+}
